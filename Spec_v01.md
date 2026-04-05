@@ -29,8 +29,7 @@ sequenceDiagram
     T->>W: Transfer TestResult
     W->>W: Analyze TestResult
 
-```
-
+```mermaid
 graph TD
     %% 노드 정의
     W1[Workstation: Transfer TestLogic] --> T1[Terminal: Receive & Ready]
@@ -47,3 +46,4 @@ graph TD
     %% 결과 전송 및 분석
     D -- "Success/Fail" --> R[Terminal: Transfer TestResult]
     R --> F[Workstation: Final Analysis & Issue Tracking]
+```
