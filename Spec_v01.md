@@ -10,7 +10,8 @@
 
 ## Details
 
-```sequenceDiagram
+```mermaid
+sequenceDiagram
 
     autonumber
     participant W as Workstation
@@ -27,5 +28,5 @@
 
     T->>W: Transfer TestResult
     W->>W: Analyze TestResult
-    
+
 ```
