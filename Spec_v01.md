@@ -30,3 +30,20 @@ sequenceDiagram
     W->>W: Analyze TestResult
 
 ```
+
+graph TD
+    %% 노드 정의
+    W1[Workstation: Transfer TestLogic] --> T1[Terminal: Receive & Ready]
+    
+    %% 테스트 수행 루프
+    subgraph Execution [Test Execution Loop]
+        T1 --> C[DUT: Capture Screen]
+        C --> A[Terminal: VL-DOM Analysis]
+        A --> U[DUT: Control UI]
+        U --> D{Next Step?}
+        D -- "Continue" --> C
+    end
+    
+    %% 결과 전송 및 분석
+    D -- "Success/Fail" --> R[Terminal: Transfer TestResult]
+    R --> F[Workstation: Final Analysis & Issue Tracking]
